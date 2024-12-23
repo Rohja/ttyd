@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends tini && rm -rf 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC 
 
-RUN apt-get update && apt-get install -y ca-certificates curl sudo emacs-nox mc zsh
+RUN apt-get update && apt-get install -y ca-certificates curl sudo emacs-nox mc zsh git
 
 ## Docker client
 RUN install -m 0755 -d /etc/apt/keyrings
