@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends tini && rm -rf 
 # Extra tools
 
 ## Misc
-RUN apt-get install -y ca-certificates curl sudo emacs-nox mc zsh
+RUN apt-get update && apt-get install -y ca-certificates curl sudo emacs-nox mc zsh
 
 ## Docker client
 RUN install -m 0755 -d /etc/apt/keyrings
@@ -18,8 +18,10 @@ RUN echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   tee /etc/apt/sources.list.d/docker.list > /dev/null
-RUN apt-get update
-RUN apt-get install -y docker-ce-cli
+RUN apt-get update && apt-get install -y docker-ce-cli 
+
+## Cleanup
+RUN rm -rf /var/lib/apt/lists/*
 
 # /Extra tools
 
