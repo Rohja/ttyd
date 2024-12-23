@@ -35,4 +35,4 @@ EXPOSE 7681
 WORKDIR /root
 
 ENTRYPOINT ["/usr/bin/tini", "--"]
-CMD ["ttyd", "-W", "bash"]
+CMD ["ttyd", "-W", "zsh"]
