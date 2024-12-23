@@ -10,6 +10,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends tini && rm -rf 
 ## Misc
 RUN apt-get update && apt-get install -y ca-certificates curl sudo emacs-nox mc zsh
 
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TZ=Etc/UTC 
+
 ## Docker client
 RUN install -m 0755 -d /etc/apt/keyrings
 RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
