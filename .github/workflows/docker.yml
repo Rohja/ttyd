@@ -38,10 +38,10 @@ jobs:
           case $GITHUB_REF in
             refs/tags/*)
               TAG_NAME=${GITHUB_REF#refs/tags/}
-              echo "DOCKER_TAG=tsl0922/ttyd:${TAG_NAME}" >> $GITHUB_ENV
+              echo "DOCKER_TAG=Rohja/ttyd:${TAG_NAME}" >> $GITHUB_ENV
               ;;
             *)
-              echo "DOCKER_TAG=tsl0922/ttyd:latest" >> $GITHUB_ENV
+              echo "DOCKER_TAG=Rohja/ttyd:latest" >> $GITHUB_ENV
           esac
       - name: build/push docker image
         uses: docker/build-push-action@v6
